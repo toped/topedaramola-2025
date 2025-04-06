@@ -28,26 +28,23 @@ jobs:
     - name: Publish .NET Project
       run: dotnet publish portfolio.csproj -c Release -o release --no-restore
 
-    - name: List wwwroot contents
+    - name: Copy wwwroot contents
       run: |
-        echo "Contents of release/wwwroot:"
-        ls -la release/wwwroot
-        echo "Checking index.html:"
-        cat release/wwwroot/index.html | grep -i "base href"
+        cp -r release/wwwroot/* release/
+        rm -rf release/wwwroot
 
     - name: Add .nojekyll file
-      run: touch release/wwwroot/.nojekyll
+      run: touch release/.nojekyll
 
     - name: Fix base href
       run: |
-        echo "Setting base href in index.html"
-        sed -i 's|<base href="\/" />|<base href="/topedaramola-2025/" />|g' release/wwwroot/index.html
+        sed -i 's|<base href="/" />|<base href="/topedaramola-2025/" />|g' release/index.html
         echo "Checking updated index.html:"
-        cat release/wwwroot/index.html | grep -i "base href"
+        cat release/index.html | grep -i "base href"
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.5.0
       with:
-        folder: release/wwwroot
+        folder: release
         branch: gh-pages
         clean: true
