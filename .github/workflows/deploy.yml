@@ -28,17 +28,26 @@ jobs:
     - name: Publish .NET Project
       run: dotnet publish portfolio.csproj -c Release -o release --no-restore
 
+    - name: List wwwroot contents
+      run: |
+        echo "Contents of release/wwwroot:"
+        ls -la release/wwwroot
+        echo "Checking index.html:"
+        cat release/wwwroot/index.html | grep -i "base href"
+
     - name: Add .nojekyll file
       run: touch release/wwwroot/.nojekyll
 
     - name: Fix base href
       run: |
         echo "Setting base href in index.html"
-        find release/wwwroot -name "index.html" -exec sed -i 's/<base href="\/"/<base href="\/topedaramola-2025\/"/g' {} +
+        sed -i 's|<base href="\/" />|<base href="/topedaramola-2025/" />|g' release/wwwroot/index.html
+        echo "Checking updated index.html:"
+        cat release/wwwroot/index.html | grep -i "base href"
 
-    - name: Commit wwwroot to GitHub Pages
+    - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.5.0
       with:
-        folder: release/wwwroot   # The folder the action should deploy.
-        branch: gh-pages          # The branch the action should deploy to.
-        clean: true              # Automatically remove deleted files from the deploy branch
+        folder: release/wwwroot
+        branch: gh-pages
+        clean: true
