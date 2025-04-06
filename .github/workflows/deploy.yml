@@ -36,6 +36,10 @@ jobs:
     - name: Add .nojekyll file
       run: touch release/.nojekyll
 
+    # Add CNAME file for custom domain
+    - name: Create CNAME file
+      run: echo "topedaramola.com" > release/CNAME
+
     - name: Fix base href
       run: |
         sed -i 's|<base href="/" />|<base href="/topedaramola-2025/" />|g' release/index.html
