@@ -19,10 +19,6 @@ jobs:
     - name: Publish .NET Project
       run: dotnet publish portfolio.csproj -c Release -o release --nologo
 
-    # Deploy to GitHub Pages
-    - name: Change base-tag in index.html
-      run: sed -i 's/<base href="\/" \/>/<base href="\/topedaramola-2025\/" \/>/g' release/wwwroot/index.html
-
     - name: Add .nojekyll file
       run: touch release/wwwroot/.nojekyll
 
