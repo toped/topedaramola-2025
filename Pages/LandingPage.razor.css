@@ -58,7 +58,21 @@
     align-items: center;
     min-height: 100vh;
     padding-top: 200px;
+    padding-left: 16px;
+    padding-right: 16px;
     transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .google-container {
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .google-container {
+        padding-top: 100px;
+    }
 }
 
 .logo-section {
@@ -135,6 +149,19 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Responsive text size adjustments */
+@media (max-width: 768px) {
+    .google-style {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .google-style {
+        font-size: 24px;
+    }
 }
 
 .search-section {
