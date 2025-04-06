@@ -243,8 +243,8 @@ main[b-k8pmt2hlzp] {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 36px;
+    padding-right: 36px;
     transition: all 0.3s ease;
 }
 
@@ -357,7 +357,7 @@ main[b-k8pmt2hlzp] {
 
 @media (max-width: 480px) {
     .google-style[b-yuwcf8gurn] {
-        font-size: 24px;
+        font-size: 48px;
     }
 }
 
