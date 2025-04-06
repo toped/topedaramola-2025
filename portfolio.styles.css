@@ -1,4 +1,4 @@
-/* topedaramola-2025/Layout/MainLayout.razor.rz.scp.css */
+/* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-k8pmt2hlzp] {
     position: relative;
     display: flex;
@@ -76,7 +76,7 @@ main[b-k8pmt2hlzp] {
         padding-right: 1.5rem !important;
     }
 }
-/* topedaramola-2025/Layout/NavMenu.razor.rz.scp.css */
+/* /Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-k4kb8q4810] {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -160,7 +160,7 @@ main[b-k8pmt2hlzp] {
         overflow-y: auto;
     }
 }
-/* topedaramola-2025/Pages/LandingPage.razor.rz.scp.css */
+/* /Pages/LandingPage.razor.rz.scp.css */
 .theme-toggle[b-yuwcf8gurn] {
     position: fixed;
     top: 20px;
