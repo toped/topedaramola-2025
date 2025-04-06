@@ -40,9 +40,9 @@ jobs:
     - name: Create CNAME file
       run: echo "topedaramola.com" > release/CNAME
 
-    - name: Fix base href
+    - name: Fix base href for custom domain
       run: |
-        sed -i 's|<base href="/" />|<base href="/topedaramola-2025/" />|g' release/index.html
+        sed -i 's|<base href=".*" />|<base href="/" />|g' release/index.html
         echo "Checking updated index.html:"
         cat release/index.html | grep -i "base href"
 
