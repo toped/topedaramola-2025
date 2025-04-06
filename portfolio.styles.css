@@ -348,16 +348,35 @@ main[b-k8pmt2hlzp] {
     -webkit-text-fill-color: transparent;
 }
 
+.google-style-sub[b-yuwcf8gurn] {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0;
+    background: linear-gradient(to right, #4285f4, #ea4335, #fbbc05, #34a853);
+    opacity: 0.4;
+    background-size: 200% auto;
+    animation: gradient-b-yuwcf8gurn 7s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* Responsive text size adjustments */
 @media (max-width: 768px) {
     .google-style[b-yuwcf8gurn] {
         font-size: 48px;
+    }
+    .google-style-sub[b-yuwcf8gurn] {
+        font-size: 24px;
     }
 }
 
 @media (max-width: 480px) {
     .google-style[b-yuwcf8gurn] {
         font-size: 48px;
+    }
+    .google-style-sub[b-yuwcf8gurn] {
+        font-size: 20px;
     }
 }
 
