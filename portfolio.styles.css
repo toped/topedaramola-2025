@@ -215,13 +215,61 @@ main[b-k8pmt2hlzp] {
     box-shadow: 0 1px 6px rgba(32,33,36,.28);
 }
 
+.content-section[b-yuwcf8gurn] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: all 0.3s ease;
+    margin-top: -160px; /* Offset for the header elements */
+}
+
+/* Adjust logo section when search results are present */
+.search-results:not(:empty) ~ * .content-section[b-yuwcf8gurn],
+.google-container:has(.search-results:not(:empty)) .content-section[b-yuwcf8gurn] {
+    margin-top: 160px;
+}
+
+.middle-section .logo-section[b-yuwcf8gurn] {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 .google-container[b-yuwcf8gurn] {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding-top: 200px;
+    padding-left: 16px;
+    padding-right: 16px;
     transition: all 0.3s ease;
+}
+
+.main-content[b-yuwcf8gurn] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    min-height: 60vh;
+    margin-top: -60px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .main-content[b-yuwcf8gurn] {
+        margin-top: -40px;
+        min-height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content[b-yuwcf8gurn] {
+        margin-top: -30px;
+        min-height: 40vh;
+    }
 }
 
 .logo-section[b-yuwcf8gurn] {
@@ -298,6 +346,19 @@ main[b-k8pmt2hlzp] {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Responsive text size adjustments */
+@media (max-width: 768px) {
+    .google-style[b-yuwcf8gurn] {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .google-style[b-yuwcf8gurn] {
+        font-size: 24px;
+    }
 }
 
 .search-section[b-yuwcf8gurn] {
@@ -406,6 +467,15 @@ main[b-k8pmt2hlzp] {
     width: 100%;
     max-width: 652px;
     padding: 0 34px;
+    overflow-y: auto;
+    max-height: calc(40vh - 20px);
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;     /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.search-results[b-yuwcf8gurn]::-webkit-scrollbar {
+    display: none;
 }
 
 .result-stats[b-yuwcf8gurn] {
